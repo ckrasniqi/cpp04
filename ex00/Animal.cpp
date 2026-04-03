@@ -4,21 +4,19 @@ Animal::Animal() : _type("Animal"){
 	std::cout << "Animal's default constructor called!" << std::endl;
 }
 
-Animal::Animal( std::string name ) :
-_name(name),
-_type("Animal"){
-	std::cout << "ClapTrap's parameterized constructor called!" << std::endl;
+Animal::Animal( const Animal &other ) :
+_type(other._type){
+	std::cout << "Animal's copy constructor called!" << std::endl;
 }
 
-ClapTrap::ClapTrap( const ClapTrap &other ) :
-_type(other._type),
-_name(other._name),{
-	std::cout << "ClapTrap's copy constructor called" << std::endl;
+Animal &Animal::operator=( const Animal &other ){
+	if (this != &other)
+		this->_type = other._type;
+	std::cout << "Animal's copy assignment operator called" << std::endl;
+	return *this;
 }
 
-ClapTrap &ClapTrap::operator=( const ClapTrap &other ){
-	std::cout << "ClapTrap's copy assignment operator called" << std::endl;
-void	Animal::makeSound(){
+void	Animal::makeSound() const {
 	if (_type == "Dog"){
 		std::cout << "Woof Arf Ruff" << std::endl;
 	}
@@ -31,7 +29,7 @@ void	Animal::makeSound(){
 	return;
 }
 
-std::string Animal::getType(){
+std::string Animal::getType() const {
 	return _type;
 }
 
