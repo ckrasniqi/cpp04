@@ -30,5 +30,6 @@ void WrongCat::makeSound() const{
 }
 
 WrongCat::~WrongCat(){
+	delete this->brain;
 	std::cout << "WrongCat's destructor called!" << std::endl;
 }
