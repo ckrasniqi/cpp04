@@ -7,19 +7,17 @@ WrongCat::WrongCat() : WrongAnimal(){
 
 }
 
-WrongCat::WrongCat ( const WrongCat &other ) : WrongAnimal(other){
-	this->brain = new Brain();
+WrongCat::WrongCat ( const WrongCat &other ) : WrongAnimal(other), brain(NULL){
 	*this = other;
 	std::cout << "WrongCat's copy constructor called" << std::endl;
 }
-
 
 WrongCat &WrongCat::operator=(const WrongCat &other){
 	if (this != &other){
 		WrongAnimal::operator=(other);
 		if (this->brain)
 			delete this->brain;
-		this->brain = new Brain();
+		this->brain = new Brain(*other.brain);
 	}
 	std::cout << "WrongCat's copy assignment opertaor called" << std::endl;
 	return *this;
