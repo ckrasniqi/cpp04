@@ -11,6 +11,7 @@ class WrongCat : public WrongAnimal{
 		WrongCat &operator=( const WrongCat &other );
 
 		void makeSound() const;
+		Brain *getBrain() const;
 		~WrongCat();
 
 	private:

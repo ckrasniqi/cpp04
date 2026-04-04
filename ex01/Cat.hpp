@@ -11,6 +11,7 @@ class Cat : public Animal{
 		Cat &operator=( const Cat &other );
 
 		void makeSound() const;
+		Brain *getBrain() const;
 		~Cat();
 
 	private:

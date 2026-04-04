@@ -27,6 +27,8 @@ void Cat::makeSound() const {
 		std::cout << "Meow Purr Mew" << std::endl;
 }
 
+Brain *Cat::getBrain() const {return this->brain;}
+
 Cat::~Cat(){
 	delete this->brain;
 	std::cout << "Cat's destructor called!" << std::endl;

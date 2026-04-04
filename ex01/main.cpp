@@ -38,14 +38,31 @@ int main()
 
     // --- 3. DEEP COPY PROOF ---
     // A copy mustn't be shallow; it must have its own Brain
-    std::cout << "--- 3. DEEP COPY TEST (DOG) ---" << std::endl;
-    Dog basic;
-    {
-        Dog tmp = basic; // Copy constructor called
-        std::cout << "Tmp dog created via copy." << std::endl;
-    }
-    // If tmp was a shallow copy, 'basic''s brain would be deleted here!
-    std::cout << "Basic dog survived tmp's destruction (Deep Copy success)." << std::endl;
+    std::cout << "\n--- 3. DEEP COPY VERIFICATION (THE BRAIN TEST) ---" << std::endl;
+    Dog* basic = new Dog();
+    basic->getBrain()->setIdea(0, "I love bones");
+    basic->getBrain()->setIdea(1, "I want to chase the mailman");
+
+    std::cout << "Basic Dog Idea 0: " << basic->getBrain()->getIdea(0) << std::endl;
+
+    std::cout << "\n--- Creating Copy ---" << std::endl;
+    Dog* copy = new Dog(*basic); // Using Copy Constructor [cite: 175]
+
+    std::cout << "Copy Dog Idea 0: " << copy->getBrain()->getIdea(0) << std::endl;
+
+    std::cout << "\n--- Modifying Original ---" << std::endl;
+    basic->getBrain()->setIdea(0, "I am a sleepy dog now");
+
+    std::cout << "Basic Dog Idea 0 (Changed): " << basic->getBrain()->getIdea(0) << std::endl;
+    std::cout << "Copy Dog Idea 0 (Should stay same): " << copy->getBrain()->getIdea(0) << std::endl;
+
+    if (basic->getBrain()->getIdea(0) != copy->getBrain()->getIdea(0))
+        std::cout << ">>> SUCCESS: Deep Copy Confirmed! <<<" << std::endl;
+    else
+        std::cout << ">>> FAILURE: Shallow Copy Detected! <<<" << std::endl;
+
+    delete basic;
+    delete copy;
 
     std::cout << "\n--- 4. END OF TESTS ---" << std::endl;
     return 0;
