@@ -9,8 +9,8 @@ class Brain{
 		Brain();
 		Brain( const Brain &other );
 		Brain &operator=( const Brain &other );
+		~Brain();
 
-		virtual ~Brain();
 
 	private:
 		std::string ideas[100];
