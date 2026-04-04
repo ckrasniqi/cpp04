@@ -2,6 +2,7 @@
 
 Dog::Dog() : Animal(){
 	_type = "Dog";
+	std::cout << "Dog's default constructor called" << std::endl;
 }
 
 Dog::Dog ( const Dog &other ) : Animal(other){
@@ -19,7 +20,9 @@ Dog &Dog::operator=(const Dog &other){
 }
 
 void Dog::makeSound() const{
-	Animal::makeSound();
+		std::cout << "Woof Arf Ruff" << std::endl;
 }
 
-Dog::~Dog(){}
+Dog::~Dog(){
+	std::cout << "Dog's destructor called!" << std::endl;
+}

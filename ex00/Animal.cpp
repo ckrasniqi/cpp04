@@ -17,20 +17,13 @@ Animal &Animal::operator=( const Animal &other ){
 }
 
 void	Animal::makeSound() const {
-	if (_type == "Dog"){
-		std::cout << "Woof Arf Ruff" << std::endl;
-	}
-	else if (_type == "Cat"){
-		std::cout << "Meow Purr Mew" << std::endl;
-	}
-	else {
 		std::cout << "Weird animal sounds" << std::endl;
-	}
-	return;
 }
 
 std::string Animal::getType() const {
 	return _type;
 }
 
-Animal::~Animal(){}
+Animal::~Animal(){
+	std::cout << "Animal's destructor called!" << std::endl;
+}
