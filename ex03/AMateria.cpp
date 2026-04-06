@@ -18,7 +18,9 @@ AMateria &AMateria::operator=( const AMateria &other ){
 
 
 
-const std::string &AMateria::getType() const {}
+const std::string &AMateria::getType() const {
+	return this->type;
+}
 
 AMateria::~AMateria(){
 	std::cout << "AMateria's destructor called!" << std::endl;

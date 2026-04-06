@@ -17,6 +17,14 @@ Cure &Cure::operator=(const Cure &other){
 	return *this;
 }
 
+AMateria *Cure::clone() const{
+	return new Cure(*this);
+}
+
+void Cure::use(ICharacter &target){
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+}
+
 Cure::~Cure(){
 	std::cout << "Cure's destructor called!" << std::endl;
 }

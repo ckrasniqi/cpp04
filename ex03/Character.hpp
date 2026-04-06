@@ -2,6 +2,7 @@
 #define CHARACTER_HPP
 
 #include "ICharacter.hpp"
+#include "AMateria.hpp"
 
 class Character : public ICharacter{
 	public:
@@ -10,6 +11,8 @@ class Character : public ICharacter{
 		Character &operator=( const Character &other );
 
 		~Character();
+	protected:
+		AMateria* _inventory[4];
 };
 
 #endif
