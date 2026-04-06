@@ -16,10 +16,12 @@ AMateria &AMateria::operator=( const AMateria &other ){
 	return *this;
 }
 
+std::string const &AMateria::getType() const {
+	return this->_type;
+}
 
-
-const std::string &AMateria::getType() const {
-	return this->type;
+void AMateria::use(ICharacter &target){
+	(void)target;
 }
 
 AMateria::~AMateria(){

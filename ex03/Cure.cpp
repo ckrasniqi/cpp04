@@ -1,6 +1,7 @@
 #include "Cure.hpp"
 
 Cure::Cure() : AMateria(){
+	this->_type = "cure";
 	std::cout << "Cure's default constructor called" << std::endl;
 }
 
@@ -22,7 +23,7 @@ AMateria *Cure::clone() const{
 }
 
 void Cure::use(ICharacter &target){
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "*heals " << target.getName() << "'s wounds *" << std::endl;
 }
 
 Cure::~Cure(){

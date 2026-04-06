@@ -7,7 +7,7 @@
 class Character : public ICharacter{
 	public:
 		Character();
-		Character( const Character &other );
+		Character( std::string const &name );
 		Character &operator=( const Character &other );
 		std::string const &getName();
 		void equip(AMateria* m);

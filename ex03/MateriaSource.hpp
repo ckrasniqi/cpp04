@@ -8,9 +8,13 @@ class MateriaSource : public IMateriaSource{
 		MateriaSource();
 		MateriaSource( const MateriaSource &other );
 		MateriaSource &operator=( const MateriaSource &other );
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 
 		~MateriaSource();
 
+	protected:
+		AMateria *_materias[4];
 };
 
 #endif

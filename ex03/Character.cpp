@@ -1,16 +1,11 @@
 #include "Character.hpp"
 
-Character::Character() :
-ICharacter(),
-_name("Default")
-{
+Character::Character() : ICharacter(), _name("Default"){
 	for (int i = 0; i < 4; i++)
 		_inventory[i] = NULL;
 	std::cout << "Character's default constructor called" << std::endl;
 }
-
-Character::Character ( const Character &other ) : ICharacter(other), _name(""){
-	*this = other;
+Character::Character( std::string const &name ): _name(name){
 	std::cout << "Character's copy constructor called" << std::endl;
 }
 
@@ -39,7 +34,7 @@ void Character::unequip(int idx){
 }
 
 void Character::use(int idxx, ICharacter &target){
-
+	_inventory[idxx]
 }
 
 Character::~Character(){
