@@ -15,7 +15,7 @@ class Character : public ICharacter{
 		void use(int idxx, ICharacter& target);
 
 		~Character();
-	protected:
+	private:
 		std::string _name;
 		AMateria* _inventory[4];
 };
