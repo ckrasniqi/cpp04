@@ -18,9 +18,11 @@ MateriaSource &MateriaSource::operator=(const MateriaSource &other){
 }
 
 void MateriaSource::learnMateria(AMateria *m){
+	if (!m)
+		return;
 	for (int i = 0; i < 4; i++){
-		if (_materias[i] == NULL){
-			_materias[i] = m;
+		if (this->_materias[i] == NULL){
+			this->_materias[i] = m->clone();
 			return;
 		}
 	}

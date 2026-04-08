@@ -3,7 +3,6 @@
 
 #include "ICharacter.hpp"
 
-
 class Character : public ICharacter{
 	public:
 		Character();
@@ -16,8 +15,8 @@ class Character : public ICharacter{
 
 		~Character();
 	private:
-		std::string _name;
-		AMateria* _inventory[4];
+		std::string	_name;
+		AMateria*	_inventory[4];
 };
 
 #endif
