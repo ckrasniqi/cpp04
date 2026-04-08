@@ -1,6 +1,6 @@
-NAME = Interface&Recap
+NAME = Interface_Recap
 
-SRCS =  main.cpp AMateria.cpp IMateria.cpp ICharacter.cpp Materia.cpp Character.cpp Ice.cpp Cure.cpp
+SRCS =  main.cpp AMateria.cpp MateriaSource.cpp Character.cpp Ice.cpp Cure.cpp
 OBJS = $(SRCS:.cpp=.o)
 
 CXX = c++
